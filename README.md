@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# uchuru-poc
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+観光クロスオーバーコンテスト2026向けのデモアプリです。
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+uchuruは、観光で大阪を好きになった人を、1週間の生活体験を通じて、地域と関わり続ける候補者に変えるPoCデモアプリです。
 
-## React Compiler
+## コンセプト
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+「住んでみる」を、観光の次の一歩に。
 
-## Expanding the Oxlint configuration
+## 作るもの
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- トップ画面
+- 住んでみる候補
+- 滞在詳細
+- 大阪生活実感ミッション
+- 事前登録
+- 滞在後アンケート
+- PoC検証ダッシュボード
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## 技術構成
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- React
+- TypeScript
+- Vite
+- React Router
+- CSS Modules または通常CSS
+
+## 開発方法
+
+```bash
+pnpm install
+pnpm run dev

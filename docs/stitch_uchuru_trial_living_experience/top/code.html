@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>uchuru - 生活実験</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&amp;family=Noto+Sans:wght@400;700&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#944a00",
+                        "tertiary-fixed": "#e6e2d9",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-fixed": "#1c1c17",
+                        "tertiary-container": "#474640",
+                        "secondary-fixed-dim": "#ffb783",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "primary": "#003634",
+                        "primary-container": "#1b4d4b",
+                        "outline-variant": "#c0c8c7",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed-variant": "#1c4e4c",
+                        "tertiary-fixed-dim": "#c9c6be",
+                        "on-tertiary-fixed-variant": "#484741",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#366664",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed": "#00201f",
+                        "on-surface": "#1b1c1c",
+                        "primary-fixed": "#baece9",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#663100",
+                        "on-surface-variant": "#404848",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efeded",
+                        "surface-container-low": "#f5f3f3",
+                        "tertiary": "#31302a",
+                        "on-tertiary-container": "#b7b4ac",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "on-primary-container": "#8cbdba",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#301400",
+                        "surface-container-high": "#eae8e7",
+                        "outline": "#707978",
+                        "secondary-container": "#fc8f34",
+                        "surface-dim": "#dbd9d9",
+                        "surface": "#fbf9f8",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed": "#ffdcc5",
+                        "on-secondary-fixed-variant": "#713700",
+                        "inverse-primary": "#9ed0cd",
+                        "primary-fixed-dim": "#9ed0cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "20px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "stack-sm": "12px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "body-lg": ["Noto Sans"],
+                        "mission-title": ["Be Vietnam Pro"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Noto Sans"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mission-title": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-image: radial-gradient(#e4e2e2 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex justify-between items-center px-container-margin h-16 w-full max-w-7xl mx-auto bg-background dark:bg-background top-0 z-50 sticky transition-colors duration-200">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary cursor-pointer hover:bg-surface-container-low dark:hover:bg-surface-container-highest p-2 rounded-full transition-colors duration-200" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">uchuru</span>
+</div>
+<nav class="flex gap-6">
+<a class="text-primary dark:text-inverse-primary font-body-md text-body-md font-bold border-b-2 border-primary" href="#">トップ</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-1 rounded-full transition-colors duration-200" href="#">住んでみる候補</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-1 rounded-full transition-colors duration-200" href="#">生活ミッション</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-1 rounded-full transition-colors duration-200" href="#">事前登録</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-1 rounded-full transition-colors duration-200" href="#">滞在後アンケート</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest px-3 py-1 rounded-full transition-colors duration-200" href="#">PoC結果</a>
+</nav>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary text-3xl" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center px-container-margin h-16 w-full bg-background dark:bg-background top-0 z-50 sticky transition-colors duration-200 shadow-sm shadow-[0_4px_20px_0_rgba(0,54,52,0.02)]">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary p-2" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">uchuru</span>
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary p-2 text-3xl" data-icon="account_circle">account_circle</span>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-stack-md md:py-stack-lg flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row gap-stack-md items-center">
+<div class="flex-1 flex flex-col gap-stack-sm order-2 md:order-1">
+<span class="font-label-caps text-label-caps text-secondary-container bg-surface-container-high w-max px-3 py-1 rounded-full">「住んでみる」を、観光の次の一歩に。</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">大阪に、<br class="hidden md:block"/>1週間だけ住んでみる。</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-lg">
+                    観光では分からない、働く・暮らす・関わる体験を試そう。なんば・天王寺周辺で1週間〜1ヶ月の試し住みを通じ、関係人口候補化を測る実証実験です。
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<button class="bg-primary text-on-primary font-body-md text-body-md px-6 py-3 rounded-full hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span> 住んでみる場所を探す
+                    </button>
+<button class="bg-surface-container-high text-on-surface font-body-md text-body-md px-6 py-3 rounded-full hover:bg-surface-container-highest transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="assignment">assignment</span> 生活ミッションを見る
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full order-1 md:order-2">
+<div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-surface-variant">
+<img alt="Hero Image" class="object-cover w-full h-full" data-alt="A warm, inviting photo of a modern, minimal cafe interior in Osaka, Japan. Sunlight streams through large windows, illuminating a wooden desk with a notebook and coffee cup. The overall aesthetic is clean, bright, and organic, emphasizing a relaxed 'slow living' vibe with a subtle teal and beige color palette. Shot on a vintage lens with soft bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwS8IaOie56IAwFw9kaELcv2n84vsUcJqej0-JB_F7_wIyaumVLGr3iSDp3kbIE_mGYxPGa-joQAGcmOGh6qb9Q6mkpK7_KaHAaSA731GxQlmdgpxNz9_TNmbJj_7BelgJqHZLyQ8x7-pVx8cwtEjJs42Cylg7NruWXUf3bWRbuuP1h9Xla3oTOPywHl-z7eV7al2zFQzixf79UZl87OyIfqwPJaWBfLUy7aheCERM8MKZEkcTYcUeaL8F-kOmwHuVFwiqX8KQpS7g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Experience Cards Section (Bento Grid) -->
+<section class="flex flex-col gap-stack-md mt-8">
+<h2 class="font-headline-md text-headline-md text-primary border-b-2 border-secondary-container inline-block w-max pb-1">体験する</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Work Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-variant flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-fixed rounded-bl-full -z-10 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+</div>
+<h3 class="font-mission-title text-mission-title text-primary">働く</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        作業カフェやコワーキングスペースを利用し、大阪での仕事や勉強のスタイルを実際に試してみましょう。
+                    </p>
+</div>
+<!-- Live Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-variant flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-fixed rounded-bl-full -z-10 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-on-secondary shadow-sm">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</div>
+<h3 class="font-mission-title text-mission-title text-primary">暮らす</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        地元のスーパー、銭湯、商店街、飲食店を巡り、観光客としてではなく「住人」としての日常を体験します。
+                    </p>
+</div>
+<!-- Connect Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-variant flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-fixed rounded-bl-full -z-10 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="w-12 h-12 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined" data-icon="diversity_3">diversity_3</span>
+</div>
+<h3 class="font-mission-title text-mission-title text-primary">関わる</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        生活情報オリエンテーションや地域イベントに参加し、地域の人々との接点やコミュニティの温かさを感じます。
+                    </p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-high rounded-3xl p-8 md:p-12 flex flex-col items-center justify-center text-center gap-6 mt-12 shadow-sm">
+<h2 class="font-headline-md text-headline-md text-primary">新しい日常を始めませんか？</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                PoC（実証実験）への事前登録を受付中です。あなたの「試し住み」が、これからの地域の形をつくります。
+            </p>
+<button class="bg-secondary text-on-secondary font-body-md text-body-md px-8 py-4 rounded-full hover:bg-secondary-container transition-colors shadow-md mt-4 flex items-center gap-2">
+                事前登録する <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_20px_0_rgba(0,54,52,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined fill-icon text-xl" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-1">トップ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="bed">bed</span>
+<span class="font-label-caps text-label-caps mt-1">住んでみる候補</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="assignment">assignment</span>
+<span class="font-label-caps text-label-caps mt-1">生活ミッション</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="analytics">analytics</span>
+<span class="font-label-caps text-label-caps mt-1">PoC結果</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">プロフィール</span>
+</a>
+</nav>
+</body></html>

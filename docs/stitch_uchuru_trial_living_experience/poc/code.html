@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>uchuru PoC Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Noto+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#944a00",
+                      "tertiary-fixed": "#e6e2d9",
+                      "inverse-surface": "#303030",
+                      "on-tertiary-fixed": "#1c1c17",
+                      "tertiary-container": "#474640",
+                      "secondary-fixed-dim": "#ffb783",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-highest": "#e4e2e2",
+                      "primary": "#003634",
+                      "primary-container": "#1b4d4b",
+                      "outline-variant": "#c0c8c7",
+                      "on-background": "#1b1c1c",
+                      "on-primary-fixed-variant": "#1c4e4c",
+                      "tertiary-fixed-dim": "#c9c6be",
+                      "on-tertiary-fixed-variant": "#484741",
+                      "inverse-on-surface": "#f2f0f0",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#366664",
+                      "background": "#fbf9f8",
+                      "on-primary-fixed": "#00201f",
+                      "on-surface": "#1b1c1c",
+                      "primary-fixed": "#baece9",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#663100",
+                      "on-surface-variant": "#404848",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#efeded",
+                      "surface-container-low": "#f5f3f3",
+                      "tertiary": "#31302a",
+                      "on-tertiary-container": "#b7b4ac",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e4e2e2",
+                      "on-primary-container": "#8cbdba",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#301400",
+                      "surface-container-high": "#eae8e7",
+                      "outline": "#707978",
+                      "secondary-container": "#fc8f34",
+                      "surface-dim": "#dbd9d9",
+                      "surface": "#fbf9f8",
+                      "surface-bright": "#fbf9f8",
+                      "secondary-fixed": "#ffdcc5",
+                      "on-secondary-fixed-variant": "#713700",
+                      "inverse-primary": "#9ed0cd",
+                      "primary-fixed-dim": "#9ed0cd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "20px",
+                      "stack-md": "24px",
+                      "stack-lg": "48px",
+                      "gutter": "16px",
+                      "stack-sm": "12px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Be Vietnam Pro"
+                      ],
+                      "headline-lg": [
+                              "Be Vietnam Pro"
+                      ],
+                      "body-lg": [
+                              "Noto Sans"
+                      ],
+                      "mission-title": [
+                              "Be Vietnam Pro"
+                      ],
+                      "label-caps": [
+                              "Space Grotesk"
+                      ],
+                      "body-md": [
+                              "Noto Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Be Vietnam Pro"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mission-title": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "26px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Dotted Path for Funnel */
+        .funnel-path {
+            background-image: radial-gradient(circle, var(--tw-colors-primary) 2px, transparent 2px);
+            background-size: 8px 100%;
+            background-repeat: repeat-y;
+            background-position: center;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased md:flex">
+<!-- Mobile Top App Bar -->
+<header class="md:hidden sticky top-0 z-40 bg-background flex justify-between items-center px-container-margin h-16 w-full max-w-7xl mx-auto border-none shadow-[0_4px_20px_0_rgba(0,54,52,0.02)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">uchuru</span>
+</div>
+<div>
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Desktop SideNav (NavigationDrawer) -->
+<aside class="hidden md:flex flex-col h-screen w-80 rounded-r-xl bg-surface shadow-lg p-6 gap-stack-sm sticky top-0 flex-shrink-0 z-40 border-r border-outline-variant/30">
+<div class="mb-stack-md flex items-center gap-3 px-4">
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">uchuru</span>
+</div>
+<div class="px-4 mb-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant/80 uppercase tracking-wider">Life Experiment</h2>
+</div>
+<nav class="flex flex-col gap-1 w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-body-md text-body-md font-medium">トップ</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+<span class="font-body-md text-body-md font-medium">住んでみる候補</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-body-md text-body-md font-medium">生活ミッション</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="app_registration">app_registration</span>
+<span class="font-body-md text-body-md font-medium">事前登録</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+<span class="font-body-md text-body-md font-medium">アンケート</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold bg-primary-fixed transition-all duration-200 shadow-sm shadow-primary/5" href="#">
+<span class="material-symbols-outlined" data-icon="insights" data-weight="fill">insights</span>
+<span class="font-body-md text-body-md font-medium">PoC結果</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full pb-32 md:pb-12 max-w-7xl mx-auto pt-6 px-container-margin md:px-stack-md">
+<!-- Header Section -->
+<div class="mb-stack-lg animate-fade-in-up">
+<p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">ダッシュボード</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background text-balance">
+                PoC検証ダッシュボード
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl text-balance">
+                大阪生活実証実験におけるユーザーエンゲージメントと関係人口候補化の推移を可視化します。
+            </p>
+</div>
+<!-- Bento Grid: Key Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Highlight Gauge: Mission Completion -->
+<div class="col-span-1 md:col-span-2 bg-surface-container-lowest rounded-[24px] p-6 border border-tertiary-fixed shadow-[0_4px_20px_0_rgba(0,54,52,0.04)] relative overflow-hidden group hover:shadow-[0_8px_30px_0_rgba(0,54,52,0.08)] transition-all duration-300">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl group-hover:bg-primary-fixed/30 transition-colors"></div>
+<h3 class="font-mission-title text-mission-title text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+                    ミッション完了率
+                </h3>
+<div class="flex flex-col md:flex-row items-center justify-around gap-8">
+<!-- Donut Chart representation -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="var(--tw-colors-surface-container-highest)" stroke-width="8"></circle>
+<circle class="transition-all duration-1000 ease-out" cx="50" cy="50" fill="transparent" r="40" stroke="var(--tw-colors-primary)" stroke-dasharray="251.2" stroke-dashoffset="82.89" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-headline-lg font-bold text-primary">67%</span>
+</div>
+</div>
+<div class="space-y-4 max-w-xs text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            参加ユーザーの67%が地域とのエンゲージメントミッションを完了し、単なる宿泊を超えた高い参加意欲を示しています。
+                        </p>
+</div>
+</div>
+</div>
+<!-- Highlight Metric: Relationship Population -->
+<div class="col-span-1 bg-surface-container-lowest rounded-[24px] p-6 border border-tertiary-fixed shadow-[0_4px_20px_0_rgba(0,54,52,0.04)] relative overflow-hidden group hover:shadow-[0_8px_30px_0_rgba(0,54,52,0.08)] transition-all duration-300 flex flex-col justify-between">
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-secondary-fixed-dim/20 rounded-full blur-2xl"></div>
+<h3 class="font-mission-title text-mission-title text-on-surface mb-2 flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-secondary" data-icon="favorite">favorite</span>
+                    関係人口候補化率
+                </h3>
+<div class="flex flex-col items-start justify-end h-full mt-8 relative z-10">
+<span class="text-6xl font-headline-lg font-bold text-secondary tracking-tighter">62%</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 border-t border-outline-variant/30 pt-4 w-full">
+                        滞在後のアンケートに基づく、アクティブな関係人口候補へのコンバージョン率。
+                    </p>
+</div>
+</div>
+<!-- Standard Metrics Row -->
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-tertiary-fixed flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">事前登録</span>
+<span class="text-3xl font-headline-md font-bold text-on-background">24<span class="text-lg text-on-surface-variant font-normal ml-1">人</span></span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-tertiary-fixed flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">問い合わせ</span>
+<span class="text-3xl font-headline-md font-bold text-on-background">7<span class="text-lg text-on-surface-variant font-normal ml-1">件</span></span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 border border-tertiary-fixed flex flex-col gap-2 col-span-2 md:col-span-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">実滞在予定</span>
+<span class="text-3xl font-headline-md font-bold text-primary">3<span class="text-lg text-on-surface-variant font-normal ml-1">件</span></span>
+</div>
+</div>
+</div>
+<!-- Relationship Funnel Section -->
+<div class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-background mb-stack-md">ユーザー行動ファネル</h2>
+<div class="bg-surface-container-lowest rounded-[24px] p-6 md:p-10 border border-tertiary-fixed shadow-[0_4px_20px_0_rgba(0,54,52,0.04)] relative">
+<!-- Vertical Dotted Line -->
+<div class="absolute left-8 md:left-1/2 top-10 bottom-10 w-0.5 funnel-path opacity-30 hidden md:block"></div>
+<div class="absolute left-10 top-10 bottom-10 w-0.5 funnel-path opacity-30 md:hidden"></div>
+<div class="flex flex-col gap-6 relative z-10">
+<!-- Funnel Step 1 -->
+<div class="flex flex-row items-center gap-6 md:w-1/2 md:pr-10 md:self-start">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-outline-variant flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<div class="flex-1 bg-surface rounded-xl p-4 border border-outline-variant/30 hover:border-primary/40 transition-colors">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-mission-title text-mission-title text-on-surface text-base">事前登録</h4>
+<span class="font-label-caps text-label-caps font-bold text-on-surface-variant">24</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant/70">事前登録</p>
+</div>
+</div>
+<!-- Funnel Step 2 -->
+<div class="flex flex-row items-center gap-6 md:w-1/2 md:pl-10 md:self-end md:flex-row-reverse">
+<div class="w-12 h-12 rounded-full bg-primary-fixed/50 border-2 border-primary-fixed flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="bed">bed</span>
+</div>
+<div class="flex-1 bg-surface rounded-xl p-4 border border-outline-variant/30 hover:border-primary/40 transition-colors md:text-right">
+<div class="flex justify-between md:flex-row-reverse items-center mb-1">
+<h4 class="font-mission-title text-mission-title text-on-surface text-base">実滞在</h4>
+<span class="font-label-caps text-label-caps font-bold text-primary">3</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant/70">実滞在</p>
+</div>
+</div>
+<!-- Funnel Step 3 -->
+<div class="flex flex-row items-center gap-6 md:w-1/2 md:pr-10 md:self-start">
+<div class="w-12 h-12 rounded-full bg-primary-container border-2 border-primary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="task_alt">task_alt</span>
+</div>
+<div class="flex-1 bg-surface rounded-xl p-4 border border-primary/30 shadow-[0_2px_10px_0_rgba(0,54,52,0.05)] transition-all">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-mission-title text-mission-title text-primary text-base">ミッション実行</h4>
+<span class="font-label-caps text-label-caps font-bold text-primary bg-primary-fixed px-2 py-0.5 rounded">67%</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant/70">ミッション実行</p>
+</div>
+</div>
+<!-- Funnel Step 4 -->
+<div class="flex flex-row items-center gap-6 md:w-1/2 md:pl-10 md:self-end md:flex-row-reverse">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-outline-variant flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="assignment">assignment</span>
+</div>
+<div class="flex-1 bg-surface rounded-xl p-4 border border-outline-variant/30 hover:border-primary/40 transition-colors md:text-right">
+<div class="flex justify-between md:flex-row-reverse items-center mb-1">
+<h4 class="font-mission-title text-mission-title text-on-surface text-base">滞在後アンケート</h4>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant/70">滞在後アンケート</p>
+</div>
+</div>
+<!-- Funnel Step 5 (Final) -->
+<div class="flex flex-row items-center gap-6 md:w-1/2 md:pr-10 md:self-start">
+<div class="w-12 h-12 rounded-full bg-secondary-container border-2 border-secondary flex items-center justify-center shrink-0 z-10 shadow-md">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="group_add">group_add</span>
+</div>
+<div class="flex-1 bg-secondary/5 rounded-xl p-5 border-2 border-secondary/20 shadow-[0_4px_15px_0_rgba(148,74,0,0.05)]">
+<div class="flex justify-between items-center mb-2">
+<h4 class="font-mission-title text-mission-title text-secondary text-lg">関係人口候補</h4>
+<span class="text-xl font-headline-md font-bold text-secondary">62%</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant/80">関係人口候補</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Nav Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 pb-safe bg-surface-container-lowest border-none shadow-[0_-4px_20px_0_rgba(0,54,52,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-caps text-label-caps mt-1">トップ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="hotel">hotel</span>
+<span class="font-label-caps text-label-caps mt-1">住んでみる候補</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-label-caps text-label-caps mt-1">生活ミッション</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="insights" data-weight="fill">insights</span>
+<span class="font-label-caps text-label-caps mt-1">PoC結果</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:opacity-80 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">プロフィール</span>
+</a>
+</nav>
+</body></html>

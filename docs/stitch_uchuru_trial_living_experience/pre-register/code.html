@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>事前登録 - uchuru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&amp;family=Noto+Sans:wght@400;600&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#944a00",
+                        "tertiary-fixed": "#e6e2d9",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-fixed": "#1c1c17",
+                        "tertiary-container": "#474640",
+                        "secondary-fixed-dim": "#ffb783",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "primary": "#003634",
+                        "primary-container": "#1b4d4b",
+                        "outline-variant": "#c0c8c7",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed-variant": "#1c4e4c",
+                        "tertiary-fixed-dim": "#c9c6be",
+                        "on-tertiary-fixed-variant": "#484741",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#366664",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed": "#00201f",
+                        "on-surface": "#1b1c1c",
+                        "primary-fixed": "#baece9",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#663100",
+                        "on-surface-variant": "#404848",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#efeded",
+                        "surface-container-low": "#f5f3f3",
+                        "tertiary": "#31302a",
+                        "on-tertiary-container": "#b7b4ac",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e2",
+                        "on-primary-container": "#8cbdba",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#301400",
+                        "surface-container-high": "#eae8e7",
+                        "outline": "#707978",
+                        "secondary-container": "#fc8f34",
+                        "surface-dim": "#dbd9d9",
+                        "surface": "#fbf9f8",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed": "#ffdcc5",
+                        "on-secondary-fixed-variant": "#713700",
+                        "inverse-primary": "#9ed0cd",
+                        "primary-fixed-dim": "#9ed0cd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "20px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "stack-sm": "12px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "body-lg": ["Noto Sans"],
+                        "mission-title": ["Be Vietnam Pro"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Noto Sans"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "mission-title": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input:focus-within + label,
+        textarea:focus-within + label,
+        select:focus-within + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: theme('colors.primary');
+            font-family: theme('fontFamily.label-caps');
+        }
+        .form-floating-label {
+            transition: all 0.2s ease-out;
+        }
+        .input-underline {
+            border-bottom-width: 2px;
+            border-color: theme('colors.outline-variant');
+            transition: border-color 0.2s;
+        }
+        .input-underline:focus {
+            border-color: theme('colors.primary');
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-background flex justify-between items-center px-container-margin h-16 w-full max-w-7xl mx-auto docked full-width top-0 z-40 relative">
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-full hidden md:flex">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">uchuru</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 rounded-full font-label-caps text-label-caps" href="#">トップ</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 rounded-full font-label-caps text-label-caps" href="#">住んでみる候補</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 rounded-full font-label-caps text-label-caps" href="#">生活ミッション</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 rounded-full font-label-caps text-label-caps" href="#">PoC結果</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 rounded-full font-label-caps text-label-caps" href="#">プロフィール</a>
+<a class="text-primary font-bold bg-primary-fixed rounded-lg hover:bg-surface-container-low transition-colors duration-200 px-4 py-2 font-label-caps text-label-caps" href="#">事前登録</a>
+</nav>
+<div class="flex items-center">
+<button class="text-primary hover:bg-surface-container-low transition-colors duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-3xl mx-auto px-container-margin py-stack-lg md:py-24">
+<!-- Header Section -->
+<div class="mb-stack-lg text-center md:text-left">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-stack-sm">事前登録</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">uchuruは、実際に有料で1週間大阪に住んでみたい人がいるかを検証しています。</p>
+</div>
+<!-- Form Canvas (Paper Sheet style) -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md md:p-10 border border-surface-container shadow-[0_4px_20px_0_rgba(0,54,52,0.04)] relative overflow-hidden">
+<!-- Subtle background texture element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed opacity-10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+<form action="#" class="space-y-stack-md relative z-10" method="POST">
+<!-- Age -->
+<div class="relative pt-6">
+<input class="input-underline w-full bg-transparent border-0 border-b-2 py-2 px-0 text-on-background font-body-lg focus:ring-0 peer" id="age" name="age" placeholder=" " required="" type="number"/>
+<label class="form-floating-label absolute left-0 top-8 text-on-surface-variant font-body-md peer-placeholder-shown:text-body-md peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:text-label-caps peer-focus:text-primary cursor-text" for="age">年齢 (Age)</label>
+</div>
+<!-- Attribute -->
+<div class="relative pt-6">
+<select class="input-underline w-full bg-transparent border-0 border-b-2 py-2 px-0 text-on-background font-body-lg focus:ring-0 peer appearance-none" id="attribute" name="attribute" required="">
+<option disabled="" hidden="" selected="" value=""></option>
+<option value="student">学生</option>
+<option value="worker">社会人</option>
+<option value="foreigner">外国人</option>
+<option value="nomad">ノマド</option>
+<option value="other">その他</option>
+</select>
+<label class="form-floating-label absolute left-0 top-2 text-primary font-label-caps text-label-caps" for="attribute">属性 (Attribute)</label>
+<span class="material-symbols-outlined absolute right-0 top-8 pointer-events-none text-outline">expand_more</span>
+</div>
+<!-- Reason -->
+<div class="relative pt-6">
+<textarea class="input-underline w-full bg-transparent border-0 border-b-2 py-2 px-0 text-on-background font-body-lg focus:ring-0 peer resize-none" id="reason" name="reason" placeholder=" " required="" rows="3"></textarea>
+<label class="form-floating-label absolute left-0 top-8 text-on-surface-variant font-body-md peer-placeholder-shown:text-body-md peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:text-label-caps peer-focus:text-primary cursor-text" for="reason">住んでみたい理由 (Reason)</label>
+</div>
+<!-- Period -->
+<div class="pt-4">
+<label class="block text-primary font-label-caps text-label-caps mb-stack-sm">希望期間 (Period)</label>
+<div class="flex flex-wrap gap-4">
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="period" type="radio" value="1w"/>
+<div class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container peer-checked:text-on-secondary-container transition-all duration-200 font-body-md">1週間</div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="period" type="radio" value="2w"/>
+<div class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container peer-checked:text-on-secondary-container transition-all duration-200 font-body-md">2週間</div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="period" type="radio" value="1m"/>
+<div class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant peer-checked:bg-secondary-container peer-checked:border-secondary-container peer-checked:text-on-secondary-container transition-all duration-200 font-body-md">1ヶ月</div>
+</label>
+</div>
+</div>
+<!-- Timing -->
+<div class="relative pt-6">
+<input class="input-underline w-full bg-transparent border-0 border-b-2 py-2 px-0 text-on-background font-body-lg focus:ring-0 peer" id="timing" name="timing" placeholder=" " required="" type="text"/>
+<label class="form-floating-label absolute left-0 top-8 text-on-surface-variant font-body-md peer-placeholder-shown:text-body-md peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:text-label-caps peer-focus:text-primary cursor-text" for="timing">希望時期 (Timing)</label>
+</div>
+<!-- Budget -->
+<div class="relative pt-6">
+<input class="input-underline w-full bg-transparent border-0 border-b-2 py-2 px-0 text-on-background font-body-lg focus:ring-0 peer" id="budget" name="budget" placeholder=" " required="" type="number"/>
+<label class="form-floating-label absolute left-0 top-8 text-on-surface-variant font-body-md peer-placeholder-shown:text-body-md peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:text-label-caps peer-focus:text-primary cursor-text" for="budget">予算感 (Budget)</label>
+</div>
+<!-- Intent to stay -->
+<div class="pt-4">
+<label class="block text-primary font-label-caps text-label-caps mb-stack-sm">滞在意向 (Intent to stay)</label>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer sr-only" name="intent" type="radio" value="yes"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary transition-all duration-200"></div>
+<div class="absolute w-2 h-2 rounded-full bg-surface-container-lowest opacity-0 peer-checked:opacity-100 transition-opacity duration-200"></div>
+</div>
+<span class="text-on-background font-body-md group-hover:text-primary transition-colors">はい、ぜひ参加したい</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer sr-only" name="intent" type="radio" value="maybe"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary transition-all duration-200"></div>
+<div class="absolute w-2 h-2 rounded-full bg-surface-container-lowest opacity-0 peer-checked:opacity-100 transition-opacity duration-200"></div>
+</div>
+<span class="text-on-background font-body-md group-hover:text-primary transition-colors">条件が合えば参加したい</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input class="peer sr-only" name="intent" type="radio" value="no"/>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant peer-checked:border-primary peer-checked:bg-primary transition-all duration-200"></div>
+<div class="absolute w-2 h-2 rounded-full bg-surface-container-lowest opacity-0 peer-checked:opacity-100 transition-opacity duration-200"></div>
+</div>
+<span class="text-on-background font-body-md group-hover:text-primary transition-colors">今回は見送るが情報は欲しい</span>
+</label>
+</div>
+</div>
+<!-- Missions (Optional checkboxes) -->
+<div class="pt-4 pb-6">
+<label class="block text-primary font-label-caps text-label-caps mb-stack-sm">興味のあるミッション (Missions)</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="flex items-start gap-3 p-4 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" type="checkbox"/>
+<div>
+<span class="block font-body-md text-on-background mb-1">ローカルコミュニティとの交流</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-4 rounded-lg border border-surface-variant hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary focus:ring-offset-0 bg-transparent" type="checkbox"/>
+<div>
+<span class="block font-body-md text-on-background mb-1">コワーキングスペースの体験</span>
+</div>
+</label>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-stack-md flex justify-end border-t border-surface-variant">
+<button class="bg-primary text-on-primary font-mission-title text-mission-title px-8 py-4 rounded-full shadow-sm hover:shadow-md hover:bg-primary-container transition-all duration-200 w-full sm:w-auto flex items-center justify-center gap-2" type="submit">
+                        事前登録を送信する
+                        <span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

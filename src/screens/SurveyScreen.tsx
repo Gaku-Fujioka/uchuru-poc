@@ -117,7 +117,7 @@ export function SurveyScreen({
               onClick={() => navigate('/poc-dashboard')}
               type="button"
             >
-              生活実験の結果を見る
+              大阪トライアルの結果を見る
             </button>
             <button className="button outline" onClick={resetSurvey} type="button">
               回答し直す

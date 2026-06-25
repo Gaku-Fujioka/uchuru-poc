@@ -60,7 +60,7 @@ export function StayDetailScreen({
           <section className="section-block compact">
             <div className="section-heading">
               <p className="eyebrow">Missions</p>
-              <h2>この滞在でできる大阪生活実感ミッション</h2>
+              <h2>この滞在でできる大阪トライアルミッション</h2>
             </div>
             <div className="mission-detail-grid">
               {supportedMissions.map((mission) => (
@@ -100,7 +100,7 @@ export function StayDetailScreen({
             {selectedPropertyId === property.id && (
               <p className="selection-badge">この滞在を選択中</p>
             )}
-            <h2>{property.areaLabel}での生活実験</h2>
+            <h2>{property.areaLabel}での大阪トライアル</h2>
             <p>{property.address}</p>
             <PillList items={property.features} />
             <button
@@ -132,7 +132,7 @@ export function StayDetailScreen({
             <dl>
               <div>
                 <dt>uchuru 担当</dt>
-                <dd>生活体験ミッション、滞在UX、アンケート分析。</dd>
+                <dd>トライアルミッション、滞在UX、アンケート分析。</dd>
               </div>
               <div>
                 <dt>運営事業者 担当</dt>

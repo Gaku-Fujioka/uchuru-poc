@@ -2,9 +2,9 @@
 
 ## 全体トーン
 
-- 不動産アプリではなく、1週間の大阪生活実験ノート
+- 不動産アプリではなく、1週間の大阪トライアル
 - 温かい、信頼感がある、若者向け
-- 物件検索より、生活ミッションを主役にする
+- 物件検索より、トライアルミッションを主役にする
 
 ## カラー
 
@@ -26,7 +26,7 @@
 | トップ | screenshots/top.png | / |
 | 住んでみる候補 | screenshots/stays.png | /stays |
 | 滞在詳細 | screenshots/stay-detail.png | /stays/:propertyId |
-| 生活ミッション | screenshots/missions.png | /missions |
+| トライアルミッション | screenshots/missions.png | /missions |
 | 事前登録 | screenshots/pre-register.png | /pre-register |
 | 滞在後アンケート | screenshots/survey.png | /survey |
-| PoC結果 | screenshots/poc-dashboard.png | /poc-dashboard |
+| 大阪トライアルの結果 | screenshots/poc-dashboard.png | /poc-dashboard |

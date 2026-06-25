@@ -116,7 +116,7 @@ function App() {
     },
     {
       id: 'missions',
-      label: '生活ミッション',
+      label: 'トライアルミッション',
       route: '/missions',
       done: missionCompletionRate === 100,
       active:
@@ -242,7 +242,7 @@ function getNextAction({
   }
 
   if (missionCompletionRate < 100) {
-    return { label: 'ミッションを進める', path: '/missions' }
+    return { label: 'トライアルミッションを進める', path: '/missions' }
   }
 
   if (!surveyComplete) {

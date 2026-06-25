@@ -21,7 +21,7 @@ export function ExperimentProgress({
   const completedCount = steps.filter((step) => step.done).length
 
   return (
-    <section className="flow-shell" aria-label="生活実験の進行状況">
+    <section className="flow-shell" aria-label="大阪トライアルの進行状況">
       <div className="flow-inner">
         <div className="flow-summary">
           <span>現在地</span>

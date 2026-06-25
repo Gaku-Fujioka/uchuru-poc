@@ -28,10 +28,10 @@ export function TopScreen({
     <section className="page home-page app-home">
       <header className="home-app-header">
         <div>
-          <p className="eyebrow">Osaka Life Experiment</p>
-          <h1>大阪生活実験ノート</h1>
+          <p className="eyebrow">Osaka Trial</p>
+          <h1>大阪トライアル</h1>
           <p>
-            1週間だけ大阪に住んでみるための、滞在先・生活ミッション・振り返りをここから進めます。
+            1週間だけ大阪に住んでみるための、滞在先・トライアルミッション・振り返りをここから進めます。
           </p>
         </div>
         <button
@@ -60,7 +60,7 @@ export function TopScreen({
         </section>
 
         <section className="experiment-state-card">
-          <h2>現在の生活実験</h2>
+          <h2>現在の大阪トライアル</h2>
           {selectedProperty ? (
             <div className="mini-stay-card">
               <img
@@ -109,7 +109,7 @@ export function TopScreen({
             />
             <StatusRow
               done={missionCompletionRate === 100}
-              label="生活ミッション"
+              label="トライアルミッション"
               value={`${missionCompletionRate}%`}
             />
             <StatusRow
@@ -121,9 +121,9 @@ export function TopScreen({
         </section>
 
         <section className="home-stats-card">
-          <h2>実証メモ</h2>
+          <h2>トライアルメモ</h2>
           <p>
-            uchuruは滞在件数だけでなく、生活ミッション実行率と関係人口候補化率を見ます。
+            uchuruは滞在件数だけでなく、トライアルミッション実行率と関係人口候補化率を見ます。
           </p>
           <div className="home-metric-row">
             <MetricTile label="事前登録" value={`${stats.preRegistrations}人`} />
@@ -158,11 +158,11 @@ function StatusRow({
 
 function getNextActionCopy(path: string) {
   if (path === '/stays') {
-    return '1週間の大阪生活を試す拠点をひとつ選びます。'
+    return '1週間の大阪トライアルで使う拠点をひとつ選びます。'
   }
 
   if (path === '/pre-register') {
-    return '選んだ滞在候補をもとに、予算・時期・使いたいミッションを登録します。'
+    return '選んだ滞在候補をもとに、予算・時期・使いたいトライアルミッションを登録します。'
   }
 
   if (path === '/missions') {
@@ -173,5 +173,5 @@ function getNextActionCopy(path: string) {
     return '体験後の気持ちを答えて、大阪との継続的な関わりを確認します。'
   }
 
-  return '生活実験の結果と関係人口候補化の状態を確認します。'
+  return '大阪トライアルの結果と関係人口候補化の状態を確認します。'
 }

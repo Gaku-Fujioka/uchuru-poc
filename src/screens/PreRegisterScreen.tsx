@@ -55,7 +55,7 @@ export function PreRegisterScreen({
       <section className="page form-page">
         <PageIntro
           eyebrow="Step 2"
-          lead="事前登録の前に、1週間の生活実験で使う滞在候補をひとつ選びます。"
+          lead="事前登録の前に、大阪トライアルで使う滞在候補をひとつ選びます。"
           title="先に滞在候補を選びましょう"
         />
         <section className="success-panel">
@@ -80,7 +80,7 @@ export function PreRegisterScreen({
       <section className="page form-page">
         <PageIntro
           eyebrow="Step 2 Complete"
-          lead="登録内容を受け付けました。次は、大阪で実際に試す生活ミッションへ進みます。"
+          lead="登録内容を受け付けました。次は、大阪で実際に試すトライアルミッションへ進みます。"
           title="事前登録ありがとうございます"
         />
         <section className="success-panel">
@@ -93,14 +93,14 @@ export function PreRegisterScreen({
           <div className="success-points">
             <span>予算と時期の検証</span>
             <span>有料滞在意思の検証</span>
-            <span>使いたいミッションの検証</span>
+            <span>使いたいトライアルミッションの検証</span>
           </div>
           <button
             className="button primary"
             onClick={() => navigate('/missions')}
             type="button"
           >
-            生活ミッションへ進む
+            トライアルミッションへ進む
             <span aria-hidden="true">→</span>
           </button>
         </section>
@@ -112,7 +112,7 @@ export function PreRegisterScreen({
     <section className="page form-page">
       <PageIntro
         eyebrow="Step 2"
-        lead={`${selectedProperty.areaLabel}の滞在候補をもとに、予算・時期・使いたいミッションを登録します。`}
+        lead={`${selectedProperty.areaLabel}の滞在候補をもとに、予算・時期・使いたいトライアルミッションを登録します。`}
         title="事前登録"
       />
 
@@ -232,7 +232,7 @@ export function PreRegisterScreen({
         </fieldset>
 
         <fieldset>
-          <legend>使いたいミッション</legend>
+          <legend>使いたいトライアルミッション</legend>
           <div className="checkbox-grid">
             {missions.map((mission) => (
               <label key={mission.id}>

@@ -27,7 +27,7 @@ export function StaysScreen({
     <section className="page">
       <PageIntro
         eyebrow="Trial Stays"
-        lead="まずは1週間の拠点をひとつ選びます。選んだ滞在先に合わせて、事前登録と生活ミッションがつながります。"
+        lead="まずは1週間の拠点をひとつ選びます。選んだ滞在先に合わせて、事前登録とトライアルミッションがつながります。"
         title="滞在候補を選ぶ"
       />
 

@@ -17,7 +17,7 @@ export const missionLabels: Record<MissionType, string> = {
 export const routeLabels: Record<RouteId, string> = {
   top: 'ホーム',
   stays: '滞在候補',
-  missions: '生活ミッション',
+  missions: 'トライアルミッション',
   'pre-register': '事前登録',
   survey: '振り返り',
   'poc-dashboard': '結果',
@@ -79,7 +79,7 @@ export const properties: Property[] = [
     supportedMissions: ['work', 'live', 'connect'],
     nearbySpotIds: ['work-namba', 'market-kuromon', 'orientation-namba'],
     legalNote:
-      '利用条件、料金のやり取り、鍵の受け渡し、清掃は運営事業者が担います。uchuruは送客導線、生活体験ミッション、アンケート分析に絞って検証します。',
+      '利用条件、料金のやり取り、鍵の受け渡し、清掃は運営事業者が担います。uchuruは送客導線、トライアルミッション、アンケート分析に絞って検証します。',
   },
   {
     id: 'tennoji-hostel',

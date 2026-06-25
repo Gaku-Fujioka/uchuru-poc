@@ -31,9 +31,9 @@ export function MissionsScreen({
   return (
     <section className="page missions-page">
       <PageIntro
-        eyebrow="Life Missions"
+        eyebrow="Trial Missions"
         lead="大阪での新しい生活を少しずつ体験してみましょう。焦らず、自分のペースで街の空気を感じてください。"
-        title="大阪生活実感ミッション"
+        title="大阪トライアルミッション"
       />
 
       <section className="progress-panel">

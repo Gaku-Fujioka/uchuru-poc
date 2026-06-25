@@ -24,8 +24,8 @@ export function PocDashboardScreen({
     <section className="page dashboard-page">
       <PageIntro
         eyebrow="Dashboard"
-        lead="大阪生活実証実験におけるユーザーエンゲージメントと関係人口候補化の推移を可視化します。"
-        title="PoC検証ダッシュボード"
+        lead="大阪トライアルにおけるユーザーエンゲージメントと関係人口候補化の推移を可視化します。"
+        title="大阪トライアルの結果"
       />
 
       <div className="dashboard-grid">
@@ -78,7 +78,7 @@ export function PocDashboardScreen({
       <section className="dashboard-note">
         <h2>発表デモで伝えること</h2>
         <p>
-          uchuruは、滞在件数だけでなく、生活ミッション実行率と
+          uchuruは、滞在件数だけでなく、トライアルミッション実行率と
           関係人口候補化率を検証します。
         </p>
         <p>

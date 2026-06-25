@@ -1,4 +1,5 @@
 import type { MouseEvent } from 'react'
+import { BrandLogo } from './BrandLogo'
 import {
   bottomNavItems,
   navItems,
@@ -31,7 +32,7 @@ export function Header({ activeRoute, navigate, nextAction }: NavigationProps) {
         href="/"
         onClick={(event) => handleInternalLink(event, '/', navigate)}
       >
-        uchuru
+        <BrandLogo />
       </a>
       <nav aria-label="主要ナビゲーション" className="desktop-nav">
         {navItems.map((item) => (

@@ -62,6 +62,10 @@
   letter-spacing: 0;
 }
 
+.brand-dot {
+  color: var(--accent);
+}
+
 .desktop-nav {
   display: flex;
   gap: 6px;
